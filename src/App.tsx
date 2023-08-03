@@ -1,12 +1,23 @@
 import React from "react";
-import "./App.css";
 import { ToDoList } from "./components/ToDoList";
+
+import styled from "styled-components";
+import { COLORS } from "./colors";
+
+const AppContainer = styled.div`
+  background-color: ${COLORS.purple};
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 function App() {
   return (
-    <div>
+    <AppContainer>
       <ToDoList></ToDoList>
-    </div>
+    </AppContainer>
   );
 }
 
