@@ -24,18 +24,52 @@ const Title = styled.div`
   color: ${COLORS.peachYellow};
 `;
 
-
 const ItemContainer = styled.div`
   display: flex;
-`
+  flex-direction: column;
+  width: 100%;
+`;
 
+
+//Stop people adding todos if it reaches overflow
 export class ToDoList extends React.Component {
   render() {
     return (
       <Container>
         <Title>To Do:</Title>
         <ItemContainer>
-            <Item title="Title" description="Lorem ipsum blal bla bla"></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>{" "}
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
+          <Item
+            title="Buy milk"
+            description="Come back with the milk..."
+          ></Item>
         </ItemContainer>
       </Container>
     );
