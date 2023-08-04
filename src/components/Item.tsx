@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../colors";
 
-type ItemProps = {
+export type ItemProps = {
   title: string;
   description: string;
 };
