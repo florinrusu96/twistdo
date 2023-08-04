@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToDoList } from "./components/ToDoList";
 
 import styled from "styled-components";
 import { COLORS } from "./colors";
-import { ItemProps } from './components/Item';
+import { ItemProps } from "./components/Item";
+import { CreateItemModal } from "./components/CreateItemModal";
 
 const AppContainer = styled.div`
   background-color: ${COLORS.purple};
@@ -15,7 +16,7 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
-const CreateTodo = styled.button`
+const CreateItem = styled.button`
   color: ${COLORS.notGreen};
   background-color: ${COLORS.earthYellow};
   border: none;
@@ -28,14 +29,14 @@ const CreateTodo = styled.button`
 
 function App() {
   let items: ItemProps[] = [];
-  const handleNewTicket = () => {
-    
-  };
+  const [showCreateTodo, setCreateTodo] = useState(false);
+  const handleOpenCreateItemModal = () => setCreateTodo(true);
 
   return (
     <AppContainer>
       <ToDoList items={items}></ToDoList>
-      <CreateTodo onClick={handleNewTicket}>New ToDo</CreateTodo>
+      <CreateItem onClick={handleOpenCreateItemModal}>New ToDo</CreateItem>
+      <CreateItemModal open={showCreateTodo}/>
     </AppContainer>
   );
 }
