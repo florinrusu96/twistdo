@@ -37,10 +37,19 @@ const ItemContainer = styled.div`
 //Stop people adding todos if it reaches overflow
 export class ToDoList extends React.Component<ToDoListProps> {
   render() {
+    const getItems = () => {
+      return JSON.parse(
+        localStorage.getItem("items") || "[]"
+      );
+    }
+    let items: ItemProps[] = getItems()
+
     return (
       <Container>
         <Title>To Do:</Title>
-        <ItemContainer></ItemContainer>
+        <ItemContainer>
+          {items.map(item => (<Item title={item.title} description={item.description} state={item.state}/>))}
+        </ItemContainer>
       </Container>
     );
   }

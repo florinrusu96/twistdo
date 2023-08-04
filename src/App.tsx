@@ -30,13 +30,14 @@ const CreateItem = styled.button`
 function App() {
   let items: ItemProps[] = [];
   const [showCreateTodo, setCreateTodo] = useState(false);
-  const handleOpenCreateItemModal = () => setCreateTodo(true);
+  const handleOpenModal = () => setCreateTodo(true);
+  const handleCloseModal = () => setCreateTodo(false);
 
   return (
     <AppContainer>
       <ToDoList items={items}></ToDoList>
-      <CreateItem onClick={handleOpenCreateItemModal}>New ToDo</CreateItem>
-      <CreateItemModal open={showCreateTodo}/>
+      <CreateItem onClick={handleOpenModal}>New ToDo</CreateItem>
+      <CreateItemModal open={showCreateTodo} close={handleCloseModal}/>
     </AppContainer>
   );
 }

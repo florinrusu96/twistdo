@@ -5,6 +5,7 @@ import { COLORS } from "../colors";
 export type ItemProps = {
   title: string;
   description: string;
+  state: boolean;
 };
 
 const Container = styled.div`
